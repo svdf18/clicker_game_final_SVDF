@@ -1,0 +1,220 @@
+#time_board {
+    position: relative;
+}
+
+#time_container {
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: .1em;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#time_sprite1 {
+    width: 8%;
+    position: absolute;
+    top: 2%;
+    left: 45%;
+    filter: blur(1.2px) drop-shadow(0 0 0.75rem rgb(137, 136, 141));
+    z-index: 3;
+}
+
+#time_sprite2 {
+    width: 8%;
+    position: absolute;
+    top: 2%;
+    left: 52%;
+    filter: blur(1.7px) drop-shadow(0 0 0.75rem rgb(137, 136, 141));
+    opacity: 0;
+}
+
+#time_sprite3 {
+    width: 8%;
+    position: absolute;
+    top: 2%;
+    left: 59%;
+    filter: blur(1.7px) drop-shadow(0 0 0.75rem rgb(137, 136, 141));
+    opacity: 0;
+}
+   
+#time_sprite4 {
+    width: 8%;
+    position: absolute;
+    top: 2%;
+    left: 66%;
+    filter: blur(1.7px) drop-shadow(0 0 0.75rem rgb(137, 136, 141));
+    opacity: 0;
+}
+
+#time_sprite5 {
+    width: 8%;
+    position: absolute;
+    top: 2%;
+    left: 38%;
+    filter: blur(1.7px) drop-shadow(0 0 0.75rem rgb(137, 136, 141));
+    opacity: 0;
+}
+
+#time_sprite6 {
+    width: 8%;
+    position: absolute;
+    top: 2%;
+    left: 31%;
+    filter: blur(1.7px) drop-shadow(0 0 0.75rem rgb(137, 136, 141));
+    opacity: 0;
+}
+
+#time_sprite7 {
+    width: 8%;
+    position: absolute;
+    top: 2%;
+    left: 24%;
+    filter: blur(1.7px) drop-shadow(0 0 0.75rem rgb(137, 136, 141));
+    opacity: 0;
+}
+
+#time_line {
+    width: 340%;
+    position: relative;
+    top: -20%;
+    left: 178%;
+    filter: blur(2.7px) drop-shadow(0 0 0.75rem rgb(137, 136, 141));
+    transform-origin: center;
+    opacity: 0;
+    z-index: 1;
+}
+
+/* animations */
+
+.pulse_glow_ts1 {
+    animation-name: pulse_glow_ts1;
+    animation-duration: 180s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+}
+
+@keyframes pulse_glow_ts1 {
+    0% {
+        opacity: 1;
+    }
+
+    95% {
+        opacity: 1;
+    }
+
+    100% {
+
+        opacity: 0;
+    }
+}
+
+.pulse_glow_ts2_ts5 {
+    animation-name: pulse_glow_ts2_ts5;
+    animation-duration: 150s;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    opacity: 0;
+}
+
+@keyframes pulse_glow_ts2_ts5 {
+    0% {
+        scale: 100%;
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+
+    80% {
+        scale: 103%;
+        transform: rotate(-1deg);
+        opacity: 1;
+    }
+
+    100% {
+        scale: 100%;
+        transform: rotate(0deg);
+        opacity: 0;
+    }
+}
+
+.pulse_glow_ts3_ts6 {
+
+        animation-name: pulse_glow_ts3_ts6;
+        animation-duration: 120s;
+        animation-delay: 0s;
+        animation-timing-function: linear;
+        animation-iteration-count: 1;
+
+
+}
+
+@keyframes pulse_glow_ts3_ts6 {
+    0% {
+        scale: 100%;
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+
+    50% {
+        scale: 103%;
+        transform: rotate(-1deg);
+        opacity: 1;
+    }
+
+    100% {
+        scale: 100%;
+        transform: rotate(0deg);
+        opacity: 0;
+    }
+}
+
+.pulse_glow_ts4_ts7 {
+        animation-name: pulse_glow_ts4_ts7;
+        animation-duration: 70s;
+        animation-delay: 0s;
+        animation-timing-function: linear;
+        animation-iteration-count: 1;
+
+}
+
+@keyframes pulse_glow_ts4_ts7 {
+    0% {
+        scale: 100%;
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+
+    50% {
+        scale: 103%;
+        transform: rotate(-1deg);
+        opacity: 0.5;
+    }
+
+    100% {
+        scale: 100%;
+        transform: rotate(0deg);
+        opacity: 0;
+    }
+} 
+
+.shrink {
+    animation-name: shrink;
+    animation-duration: 180s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes shrink{
+    0% {
+        scale: 1 1;
+        opacity: 0.6;   
+    }
+
+    100% {
+        scale: 0 1;
+        opacity: 0.6;
+    }
+}

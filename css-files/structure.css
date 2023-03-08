@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    user-select: none;
+}
+
+#screen {
+    aspect-ratio: 16 / 9;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    width: 100%;
+}
+
+#game {
+    grid-area: 1 / 1;
+    background-color: blue;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 10% / 10%;
+    grid-template-rows: 100%;
+}
+
+#game_bg {
+    grid-area: 1 / 1;
+    background-image: url(../svg/Clicker_bg.png);
+    background-size: cover;
+}
+
+#game_elements {
+    grid-area: 1 / 1;
+    position: relative;
+}
+
+/* UI */
+
+#game_ui {
+    position: absolute;
+    top: 4%;
+    right: 1vw;
+    color: white;
+    font-family: sans-serif;
+    font-size: 2em;
+    pointer-events: none;
+}
+
+#score_board {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: .1em;
+}
+
+#element_count {
+    white-space: nowrap;
+    text-align: right;
+}
+
+#element_image {
+    width: 1em;
+    filter: invert(1) blur(.4px) drop-shadow(0 0 0.75rem rgb(166, 92, 92));
+}
+
+#life_board {
+    margin-block-start: .2em;
+    display: grid;
+    grid-template-columns: 1.2em 1.2em 1.2em;
+}
+
+#life_board img {
+    width: 100%;
+}
+
+.active_life {
+    filter: blur(.9px) drop-shadow(0 0 0.75rem rgb(0, 0, 0));
+}
+
+.broken_life {
+    filter: invert(1) blur(1.7px) drop-shadow(0 0 0.75rem rgb(255, 255, 255));
+}
+
+/* startscreen, level complete, game over */
+
+#startscreen {
+    grid-area: 1/1;
+    z-index: 80;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    background-image: linear-gradient(150deg, rgb(233, 238, 233) 0%, rgba(239, 191, 239, 0.267) 100%);
+    
+}
+
+button {
+    padding: 0.5em 1em;
+    font-size: 2em;
+    margin: auto;
+    background-color: rgba(152, 152, 152, 0.267);
+    color:rgb(233, 238, 233);
+    border: 10px solid rgba(246, 197, 246, 0.267);
+    cursor: pointer;
+    border-radius: 10px;
+    filter: blur(1.2px);
+}
+
+#game_over {
+    grid-area: 1/1;
+    z-index: 79;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    background-image: linear-gradient(150deg, rgb(35, 36, 35) 0%, rgba(13, 11, 13, 0.267) 100%);
+    color: antiquewhite;
+}
+
+#level_complete {
+    grid-area: 1/1;
+    z-index: 78;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    background-image: linear-gradient(150deg, rgb(233, 238, 233) 0%, rgba(239, 191, 239, 0.267) 100%);
+}
+
+#game_over.hidden, #level_complete.hidden {
+    display: none;
+}
+

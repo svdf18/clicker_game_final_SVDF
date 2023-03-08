@@ -1,0 +1,219 @@
+#bad_element_container1 {
+    width: 11%;
+    height: 50%;
+    position: absolute;
+    top: 2%;
+    left: 100%;
+    filter: blur(1.7px) drop-shadow(0 0 0.75rem rgb(0, 0, 0));
+    z-index: 100;
+}
+
+#bad_element_sprite1 {
+    width: 100%
+}
+
+#bad_element_sprite_dissolve1 {
+    position: relative;
+    width: 260%;
+    top: -22vw;
+    left: -72%;
+}
+
+#bad_element_container2 {
+    width: 11%;
+    height: 9vw;
+    position: absolute;
+    top: 30vw;
+    left: 100%;
+    filter: blur(1.7px) drop-shadow(0 0 0.75rem rgb(0, 0, 0));
+    z-index: 90;
+}
+
+
+#bad_element_sprite2 {
+    width: 100%;
+}
+
+#bad_element_sprite_dissolve2 {
+    position: relative;
+    width: 260%;
+    top: -22vw;
+    left: -72%;
+}
+
+
+#bad_element_container3 {
+    width: 11%;
+    position: absolute;
+    top: 2%;
+    left: -11%;
+    filter: blur(1.7px) drop-shadow(0 0 0.75rem rgb(0, 0, 0));
+    z-index: 98;
+}
+
+#bad_element_sprite3 {
+    width: 100%;
+}
+
+#bad_element_sprite_dissolve3 {
+    position: absolute;
+    width: 270%;
+    top: -10vw;
+    left: -72%;
+}
+
+
+#bad_element_container4 {
+    width: 11%;
+    position: absolute;
+    top: 45vw;
+    left: -18%;
+    filter: blur(1.7px) drop-shadow(0 0 0.75rem rgb(0, 0, 0));
+    z-index: 97;
+    }
+
+#bad_element_sprite4 {
+    width: 100%;
+}
+
+#bad_element_sprite_dissolve4 {
+    position: absolute;
+    width: 210%;
+    top: -7vw;
+    left: -50%;
+}
+
+/* animations */
+
+.move_across1 {
+    animation-name: move_across1;
+    animation-duration: 12s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes move_across1 {
+    0% {
+        transform: translate(0%, 0%);
+        scale: 0%;
+    }
+
+    50% {
+        transform: translate(-1400%, 2000%);
+
+    }
+  
+    100% {
+        transform: translate(195%, 0);
+        scale: 100%;
+    }
+}
+
+.move_across2 {
+    animation-name: move_across2;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes move_across2 {
+    0% {
+        transform: translate(40%, 75%);
+        scale: 0%;
+    }
+
+    50% {
+        transform: translate(-1200%, 45%);
+
+    }
+  
+    100% {
+      transform: translate(-150%, -550%);
+      scale: 100%;
+    }
+}
+
+.move_across3 {
+    animation-name: move_across3;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes move_across3 {
+    0% {
+        transform: translate(0%, 0%);
+        scale: 0%;
+    }
+    
+    50% {
+        transform: translate(1415%, 285%);
+    }
+
+    100% {
+        transform: translate(-100%, 550%);
+        scale: 100%;
+    }
+}
+
+.move_across4 {
+    animation-name: move_across4;
+    animation-duration: 7s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes move_across4 {
+    0% {
+        transform: translate(0%, 0%);
+        scale: 0%;
+    }
+
+    50% {
+        transform: translate(800%, -200%);
+        scale: 100%;
+    }
+
+    100% {
+        transform: translate(0%, -400%);
+        scale: 100%;
+    }
+}
+
+.dissolve_up {
+    opacity: 0;
+    filter: blur(10px);
+    animation: fadeInBlur 1s ease-out;
+}
+  
+@keyframes fadeInBlur {
+    0% {
+      opacity: 1;
+      filter: blur(0);
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      filter: blur(10px);
+      transform: scale(2);
+    }
+}
+
+.trace_hidden {
+    animation-name: trace_hidden;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+}
+
+@keyframes trace_hidden {
+    0% {
+      opacity: 0;
+      filter: blur(0);
+      transform: scale(1);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(10px);
+      transform: scale(2);
+    }
+}

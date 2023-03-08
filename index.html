@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css-files/structure.css"/>
+    <link rel="stylesheet" href="css-files/main.css"/>
+    <link rel="stylesheet" href="css-files/goodelements.css"/>
+    <link rel="stylesheet" href="css-files/badelements.css"/>
+    <link rel="stylesheet" href="css-files/timeelements.css"/>
+</head>
+
+<body>
+    <div id="screen">
+        <div id="game">
+            <div id="game_bg">
+                <div id="game_elements" class="">
+                    <div id="main_char_container1">
+                        <img id="main_char_sprite1" src="svg/Jl1njA01.svg" alt="">
+                    </div>
+                    <div id="main_char_container2" class="">
+                        <img id="main_char_sprite2" src="svg/Jl1njA01.svg" alt="">
+                    </div>
+                    <div id="main_char_container3" class="">
+                        <img id="main_char_sprite3" src="svg/Charbatchfill.png" alt="">
+                        <img id="main_char_gif" src="svg/sphere6.gif" alt="">
+                    </div>
+                    <div id="main_element_container1">
+                        <img id="main_element_sprite1" src="svg/sprite_elementNEWresize.png" alt="">
+                        <img id="main_element_sprite_dissolve1" src="svg/impact1.gif" class="hidden" alt="">
+                    </div>
+                    <div id="main_element_container2">
+                        <img id="main_element_sprite2" src="svg/sprite_elementNEWresize.png" alt="">
+                        <img id="main_element_sprite_dissolve2" src="svg/impact1.gif" class="hidden" alt="">
+                    </div>
+                    <div id="main_element_container3">
+                        <img id="main_element_sprite3" src="svg/sprite_elementNEWresize.png" alt="">
+                        <img id="main_element_sprite_dissolve3" src="svg/impact1.gif" class="hidden" alt="">
+                    </div>
+                    <div id="main_element_container4">
+                        <img id="main_element_sprite4" src="svg/sprite_elementNEWresize.png" alt="">
+                        <img id="main_element_sprite_dissolve4" src="svg/impact1.gif" class="hidden" alt="">
+                    </div>
+
+                    <div id="bad_element_container1">
+                        <img id="bad_element_sprite1" src="svg/elementbadinvert.png" alt="">
+                        <img id="bad_element_sprite_dissolve1" src="svg/impact3compress.gif" class="hidden" alt="">
+                    </div>
+                    <div id="bad_element_container2">
+                        <img id="bad_element_sprite2" src="svg/elementbadinvert.png" alt="">
+                        <img id="bad_element_sprite_dissolve2" src="svg/impact3compress.gif" class="hidden" alt="">
+                    </div>
+                    <div id="bad_element_container3">
+                        <img id="bad_element_sprite3" src="svg/elementbadinvert.png" alt="">
+                        <img id="bad_element_sprite_dissolve3" src="svg/impact3compress.gif" class="hidden" alt="">
+                    </div>
+                    <div id="bad_element_container4">
+                        <img id="bad_element_sprite4" src="svg/elementbadinvert.png" alt="">
+                        <img id="bad_element_sprite_dissolve4" src="svg/impact3compress.gif" class="hidden" alt="">
+                    </div>
+
+                    <div id="life_element_container">
+                        <img id="life_element_sprite" src="svg/sphere6.gif" alt="">
+                        <img id="life_element_sprite_dissolve" src="svg/sprite3compress.gif" class="hidden" alt="">
+                    </div>
+                    
+                    
+                </div>
+
+                <div id="time_board">
+                    <div id="time_container">    
+                        <img id="time_sprite1" src="svg/LIVE.png" alt="">
+                        <img id="time_sprite2" src="svg/lifepoint-2.png" alt="">
+                        <img id="time_sprite3" src="svg/lifepoint-3.png" alt="">
+                        <img id="time_sprite4" src="svg/lifepoint-4.png" alt="">
+                        <img id="time_sprite5" src="svg/lifepoint-5.png" alt="">
+                        <img id="time_sprite6" src="svg/lifepoint-6.png" alt="">
+                        <img id="time_sprite7" src="svg/lifepoint-7.png" alt="">
+                        <img id="time_line" src="svg/timeline2.png" class="" alt="">
+                    </div>
+                </div>
+                <div id="game_ui" class="hidden">
+                    <div id="score_board">
+                        <span id="element_count">0</span>
+                        <img id="element_image" src="svg/sprite_elementNEWresize.png">
+                    </div>
+                    <div id="life_board">                    
+                        <img id="life1" src="svg/LIVE.png" class="active_life">
+                        <img id="life2" src="svg/LIVE.png" class="active_life">
+                        <img id="life3" src="svg/LIVE.png" class="active_life">
+                        <img id="life4" src="svg/LIVE.png" class="active_life">
+                        <img id="life5" src="svg/LIVE.png" class="active_life">
+                        <img id="life6" src="svg/LIVE.png" class="active_life">
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div id="startscreen">
+            <button id="btn_start" class="pulse">S̷T̸À̵̻͕̫̱̍Ṟ̸͎͊̓́̄̂̕͠T̶̻̟̠̺̀̏͐̃̅͗̆̍͊̕ ̶̷̢̞̙̥͓̮̪̯͍̤͋̌̈́̎̉̓̽̋̌͛͐̚͠ͅĠ̵̞̰̘̯̓̿́͐̂Â̷̱̹̄ͅM̸̱̰̈́E̸̞͒</button>
+        </div>
+        <div id="game_over" class="hidden">
+            <button id="btn_restart" class="">r̸e̴s̷͉͖͌̈̊͐t̷̼̺̗̑̒ḁ̶̮̘͒͊͘r̵̢̘͓͑̀͌͌̀̇͝͝ẗ̴̡͙̝̙̜͔̟͔́̎͋̈́͌̏̈́ ̸̢̢̱̘̟̤͖̦̓̐̑̐͂̈́̕g̴̨̭͉̜͂ȧ̷̜̽̏̕m̶̗̊e̶̼͑</button>
+        </div>
+        <div id="level_complete" class="hidden">
+            <button id="btn_go_to_start" class="">r̸e̴s̷͉͖͌̈̊͐t̷̼̺̗̑̒ḁ̶̮̘͒͊͘r̵̢̘͓͑̀͌͌̀̇͝͝ẗ̴̡͙̝̙̜͔̟͔́̎͋̈́͌̏̈́ ̸̢̢̱̘̟̤͖̦̓̐̑̐͂̈́̕g̴̨̭͉̜͂ȧ̷̜̽̏̕m̶̗̊e̶̼͑</button>
+        </div>
+
+    </div>
+
+    <audio id="audio_bg" src="audio/audiobg.mp3" loop></audio>
+    <audio id="audio_bg2" src="audio/audiobg2.mp3" loop></audio>
+    <audio id="good1_audio" src="audio/good1_audio.mp3" loop></audio>
+    <audio id="good2_audio" src="audio/good2_audio.mp3" loop></audio>
+    <audio id="good3_audio" src="audio/good3_audio.mp3" loop></audio>
+    <audio id="good4_audio" src="audio/good4_audio.mp3" loop></audio>
+    <audio id="good5_audio" src="audio/good5_audio.mp3" loop></audio>
+    <audio id="good6_audio" src="audio/good6_audio.mp3" loop></audio>
+    <audio id="good7_audio" src="audio/good7_audio.mp3" loop></audio>
+    <audio id="good8_audio" src="audio/good8_audio.mp3" loop></audio>
+    <audio id="good9_audio" src="audio/good9_audio.mp3" loop></audio>
+    <audio id="good10_audio" src="audio/good10_audio.mp3" loop></audio>
+    <audio id="good11_audio" src="audio/good11_audio.mp3" loop></audio>
+    <audio id="good12_audio" src="audio/good12_audio.mp3" loop></audio>
+    <audio id="hit1_audio" src="audio/hit1_audio.mp3"></audio>
+    <audio id="hit2_audio" src="audio/hit2_audio.mp3"></audio>
+    <audio id="hit3_audio" src="audio/hit3_audio.mp3"></audio>
+    <audio id="hit4_audio" src="audio/hit4_audio.mp3"></audio>
+    <audio id="life1_audio" src="audio/life1_audio.mp3"></audio>
+    <audio id="life2_audio" src="audio/life2_audio.mp3"></audio>
+    <audio id="bad1_audio" src="audio/bad1_audio.mp3" loop></audio>
+    <audio id="bad2_audio" src="audio/bad2_audio.mp3" loop></audio>
+    <audio id="bad3_audio" src="audio/bad3_audio.mp3" loop></audio>
+    <audio id="bad4_audio" src="audio/bad4_audio.mp3" loop></audio>
+    <audio id="bad1_audio_hit" src="audio/bad1_audio_hit.mp3"></audio>
+    <audio id="bad2_audio_hit" src="audio/bad2_audio_hit.mp3"></audio>
+    <audio id="bad3_audio_hit" src="audio/bad3_audio_hit.mp3"></audio>
+    <audio id="bad4_audio_hit" src="audio/bad4_audio_hit.mp3"></audio>
+    <audio id="chord1_audio" src="audio/chord1_audio.mp3"></audio>
+    <audio id="chord2_audio" src="audio/chord2_audio.mp3"></audio>
+    <audio id="chord3_audio" src="audio/chord3_audio.mp3"></audio>
+    <audio id="chord4_audio" src="audio/chord4_audio.mp3"></audio>
+
+    <script src="script.js"></script>    
+</body>
+</html>
