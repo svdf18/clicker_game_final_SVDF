@@ -184,6 +184,7 @@ function startGame(){
     document.querySelector("#startscreen").classList.add("hidden");
     document.querySelector("#game_over").classList.add("hidden");
     document.querySelector("#game_ui").classList.remove("hidden");
+    document.querySelector("#btn_start").removeEventListener("click", startGame);
 
     document.querySelector("#audio_bg").play();
     document.querySelector("#audio_bg2").play();
