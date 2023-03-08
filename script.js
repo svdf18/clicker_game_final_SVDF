@@ -169,6 +169,8 @@ function resetPoints(){
 }
 
 function startGame(){
+    console.log("game is running");
+
     resetLives();
     resetPoints();
     showGameScreen();
@@ -218,6 +220,8 @@ function startGame(){
 
 }
 
+//main elements
+
 function clickMe1() {
     console.log("click me1");
     mainElementContainer1.removeEventListener("click", goneMe1);
@@ -231,8 +235,6 @@ function clickMe1() {
     randomAudio1();
     incrementPoints();
 }
-
-//trace/slow down TIME ani
 
 function goneMe1() {
     console.log("restartME1")
@@ -271,8 +273,6 @@ function clickMe2() {
     incrementPoints();
 }
 
-//trace/slow down TIME ani
-
 function goneMe2() {
     console.log("restartME2")
     mainElementContainer2.removeEventListener("animationend", goneMe2)
@@ -310,8 +310,6 @@ function clickMe3() {
     incrementPoints();
 }
 
-//trace/slow down TIME ani
-
 function goneMe3() {
     console.log("restartME3")
     mainElementContainer3.removeEventListener("animationend", goneMe3)
@@ -347,7 +345,6 @@ function clickMe4() {
     randomAudio2();
     incrementPoints();
 }
-//trace/slow down TIME ani
 
 function goneMe4() {
     console.log("restartME4")
@@ -372,6 +369,8 @@ function goneMe4() {
     move_adjust_4();
 }
 
+// bad elements
+
 function clickBe1() {
     console.log("click be1")
     badElementContainer1.removeEventListener("click", clickBe1);
@@ -383,7 +382,6 @@ function clickBe1() {
     document.querySelector("#bad1_audio_hit").play();
     decrementLives();
 }
-//trace/speedup animation TIME
 
 function goneBe1() {
     console.log("restartBE1")
@@ -409,8 +407,6 @@ function clickBe2() {
     decrementLives();
 }
 
-//trace/speedup animation TIME
-
 function goneBe2() {
     console.log("restartBE2")
     badElementContainer2.removeEventListener("animationend", goneBe2);
@@ -434,8 +430,6 @@ function clickBe3() {
     document.querySelector("#bad3_audio_hit").play();
     decrementLives();
 }
-
-//trace/speedup animation TIME
 
 function goneBe3() {
     console.log("restartBE3")
@@ -461,9 +455,6 @@ function clickBe4() {
     decrementLives();
 }
 
-
-//trace/speedup animation TIME
-
 function goneBe4() {
     console.log("restartBE4")
     badElementContainer4.removeEventListener("animationend", goneBe4);
@@ -475,6 +466,8 @@ function goneBe4() {
     badElementContainer4.classList.add("move_across4")
     badElementContainer4.addEventListener("click", clickBe4);
 }
+
+// life element
 
 function clickLe(){
     console.log("click life element");
