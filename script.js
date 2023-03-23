@@ -207,10 +207,10 @@ function startGame(){
     document.querySelector("#main_char_gif").classList.add("pulse");
     document.querySelector("#main_char_gif").classList.add("rotate360");
     
-    mainElementContainer1.addEventListener("click", clickMe1);
-    mainElementContainer2.addEventListener("click", clickMe1);
-    mainElementContainer3.addEventListener("click", clickMe1);
-    mainElementContainer4.addEventListener("click", clickMe1);
+    mainElementContainer1.addEventListener("mousedown", clickMe1);
+    mainElementContainer2.addEventListener("mousedown", clickMe1);
+    mainElementContainer3.addEventListener("mousedown", clickMe1);
+    mainElementContainer4.addEventListener("mousedown", clickMe1);
 
     badElementContainer1.addEventListener("click", clickBe1);
     badElementContainer2.addEventListener("click", clickBe2);
@@ -229,7 +229,7 @@ function clickMe1() {
     const sprite = this.querySelector(".sprite");
     const gif = this.querySelector(".gif");
 
-    container.removeEventListener("click", goneMe1);
+    container.removeEventListener("mousedown", clickMe1);
     container.classList.add("paused");
 
     sprite.classList.add("dissolve");
@@ -260,7 +260,7 @@ function goneMe1() {
     container.classList.remove(container.dataset.move2);
     container.offsetWidth;
     gif.classList.add("hidden");
-    container.addEventListener("click", clickMe1);
+    container.addEventListener("mousedown", clickMe1);
     
     if (Math.random() < 0.5) {
         container.classList.add(container.dataset.move1);
