@@ -208,9 +208,9 @@ function startGame(){
     document.querySelector("#main_char_gif").classList.add("rotate360");
     
     mainElementContainer1.addEventListener("click", clickMe1);
-    mainElementContainer2.addEventListener("click", clickMe2);
-    mainElementContainer3.addEventListener("click", clickMe3);
-    mainElementContainer4.addEventListener("click", clickMe4);
+    mainElementContainer2.addEventListener("click", clickMe1);
+    mainElementContainer3.addEventListener("click", clickMe1);
+    mainElementContainer4.addEventListener("click", clickMe1);
 
     badElementContainer1.addEventListener("click", clickBe1);
     badElementContainer2.addEventListener("click", clickBe2);
@@ -225,13 +225,18 @@ function startGame(){
 
 function clickMe1() {
     console.log("click me1");
-    mainElementContainer1.removeEventListener("click", goneMe1);
-    mainElementContainer1.classList.add("paused");
-    mainElementSprite1.classList.add("dissolve");
-    mainElementGif1.classList.remove("hidden");
-    mainElementContainer1.addEventListener("animationend", goneMe1);
+    const container = this;
+    const sprite = this.querySelector(".sprite");
+    const gif = this.querySelector(".gif");
 
-    document.querySelector("#hit1_audio").play();
+    container.removeEventListener("click", goneMe1);
+    container.classList.add("paused");
+
+    sprite.classList.add("dissolve");
+    gif.classList.remove("hidden");
+    container.addEventListener("animationend", goneMe1);
+
+    container.querySelector("audio").play();
 
     randomAudio1();
     incrementPoints();
@@ -239,25 +244,24 @@ function clickMe1() {
 
 function goneMe1() {
     console.log("restartME1")
-    mainElementContainer1.removeEventListener("animationend", goneMe1)
-    mainElementSprite1.classList.remove("dissolve");
-    mainElementContainer1.classList.remove("paused");
-    mainElementContainer1.classList.remove("move_center1");
-    mainElementContainer1.classList.remove("move_center1_adjust");
-    mainElementContainer1.offsetWidth;
-    mainElementGif1.classList.add("hidden");
-    mainElementContainer1.addEventListener("click", clickMe1);
-    
-    function move_adjust_1(){
-    
-        if (Math.random() < 0.5) {
-            mainElementContainer1.classList.add("move_center1")
-        } else {
-            mainElementContainer1.classList.add("move_center1_adjust")
-        }
-    }
+    const container = this;
+    const sprite = this.querySelector(".sprite");
+    const gif = this.querySelector(".gif");
 
-    move_adjust_1();
+    container.removeEventListener("animationend", goneMe1)
+    sprite.classList.remove("dissolve");
+    container.classList.remove("paused");
+    container.classList.remove(container.dataset.move1);
+    container.classList.remove(container.dataset.move2);
+    container.offsetWidth;
+    gif.classList.add("hidden");
+    container.addEventListener("click", clickMe1);
+    
+    if (Math.random() < 0.5) {
+        container.classList.add(container.dataset.move1);
+    } else {
+        container.classList.add(container.dataset.move2)
+    }  
 }
 
 function clickMe2() {
@@ -268,7 +272,7 @@ function clickMe2() {
     mainElementGif2.classList.remove("hidden");
     mainElementContainer2.addEventListener("animationend", goneMe2);
 
-    document.querySelector("#hit2_audio").play();
+    mainElementContainer2.querySelector("audio").play();
 
     randomAudio1();
     incrementPoints();
@@ -285,16 +289,11 @@ function goneMe2() {
     mainElementGif2.classList.add("hidden");
     mainElementContainer2.addEventListener("click", clickMe2);
 
-    function move_adjust_2(){
-    
-        if (Math.random() < 0.5) {
-            mainElementContainer2.classList.add("move_center2")
-        } else {
-            mainElementContainer2.classList.add("move_center2_adjust")
-        }
+    if (Math.random() < 0.5) {
+        mainElementContainer2.classList.add("move_center2")
+    } else {
+        mainElementContainer2.classList.add("move_center2_adjust")
     }
-
-    move_adjust_2();
 }
 
 function clickMe3() {
@@ -305,7 +304,7 @@ function clickMe3() {
     mainElementGif3.classList.remove("hidden");
     mainElementContainer3.addEventListener("animationend", goneMe3);
 
-    document.querySelector("#hit3_audio").play();
+    mainElementContainer3.querySelector("audio").play();
 
     randomAudio2();
     incrementPoints();
@@ -322,16 +321,11 @@ function goneMe3() {
     mainElementGif3.classList.add("hidden");
     mainElementContainer3.addEventListener("click", clickMe3);
 
-    function move_adjust_3(){
-    
-        if (Math.random() < 0.5) {
-            mainElementContainer3.classList.add("move_center3")
-        } else {
-            mainElementContainer3.classList.add("move_center3_adjust")
-        }
-    }
-
-    move_adjust_3();
+    if (Math.random() < 0.5) {
+        mainElementContainer3.classList.add("move_center3")
+    } else {
+        mainElementContainer3.classList.add("move_center3_adjust")
+    } 
 }
 
 function clickMe4() {
@@ -341,7 +335,7 @@ function clickMe4() {
     mainElementSprite4.classList.add("dissolve");
     mainElementGif4.classList.remove("hidden");
     mainElementContainer4.addEventListener("animationend", goneMe4);
-    document.querySelector("#hit4_audio").play();
+    mainElementContainer4.querySelector("audio").play();
 
     randomAudio2();
     incrementPoints();
@@ -358,16 +352,11 @@ function goneMe4() {
     mainElementGif4.classList.add("hidden");
     mainElementContainer4.addEventListener("click", clickMe4);
 
-    function move_adjust_4(){
-    
-        if (Math.random() < 0.5) {
-            mainElementContainer4.classList.add("move_center4")
-        } else {
-            mainElementContainer4.classList.add("move_center4_adjust")
-        }
-    }
-
-    move_adjust_4();
+    if (Math.random() < 0.5) {
+        mainElementContainer4.classList.add("move_center4")
+    } else {
+        mainElementContainer4.classList.add("move_center4_adjust")
+    }  
 }
 
 // bad elements
