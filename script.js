@@ -238,7 +238,12 @@ function clickMe1() {
 
     container.querySelector("audio").play();
 
-    randomAudio1();
+    if(container.dataset.randomAudio=="1") {
+        randomAudio1();
+    } else if(container.dataset.randomAudio=="2") {
+        randomAudio2();
+    }
+
     incrementPoints();
 }
 
@@ -261,101 +266,6 @@ function goneMe1() {
         container.classList.add(container.dataset.move1);
     } else {
         container.classList.add(container.dataset.move2)
-    }  
-}
-
-function clickMe2() {
-    console.log("click me2");
-    mainElementContainer2.removeEventListener("click", goneMe2);
-    mainElementContainer2.classList.add("paused");
-    mainElementSprite2.classList.add("dissolve");
-    mainElementGif2.classList.remove("hidden");
-    mainElementContainer2.addEventListener("animationend", goneMe2);
-
-    mainElementContainer2.querySelector("audio").play();
-
-    randomAudio1();
-    incrementPoints();
-}
-
-function goneMe2() {
-    console.log("restartME2")
-    mainElementContainer2.removeEventListener("animationend", goneMe2)
-    mainElementSprite2.classList.remove("dissolve");
-    mainElementContainer2.classList.remove("paused");
-    mainElementContainer2.classList.remove("move_center2");
-    mainElementContainer2.classList.remove("move_center2_adjust");
-    mainElementContainer2.offsetWidth;
-    mainElementGif2.classList.add("hidden");
-    mainElementContainer2.addEventListener("click", clickMe2);
-
-    if (Math.random() < 0.5) {
-        mainElementContainer2.classList.add("move_center2")
-    } else {
-        mainElementContainer2.classList.add("move_center2_adjust")
-    }
-}
-
-function clickMe3() {
-    console.log("click me3");
-    mainElementContainer3.removeEventListener("click", goneMe3);
-    mainElementContainer3.classList.add("paused");
-    mainElementSprite3.classList.add("dissolve");
-    mainElementGif3.classList.remove("hidden");
-    mainElementContainer3.addEventListener("animationend", goneMe3);
-
-    mainElementContainer3.querySelector("audio").play();
-
-    randomAudio2();
-    incrementPoints();
-}
-
-function goneMe3() {
-    console.log("restartME3")
-    mainElementContainer3.removeEventListener("animationend", goneMe3)
-    mainElementSprite3.classList.remove("dissolve");
-    mainElementContainer3.classList.remove("paused");
-    mainElementContainer3.classList.remove("move_center3");
-    mainElementContainer3.classList.remove("move_center3_adjust");
-    mainElementContainer3.offsetWidth;
-    mainElementGif3.classList.add("hidden");
-    mainElementContainer3.addEventListener("click", clickMe3);
-
-    if (Math.random() < 0.5) {
-        mainElementContainer3.classList.add("move_center3")
-    } else {
-        mainElementContainer3.classList.add("move_center3_adjust")
-    } 
-}
-
-function clickMe4() {
-    console.log("click me4");
-    mainElementContainer4.removeEventListener("click", goneMe4);
-    mainElementContainer4.classList.add("paused");
-    mainElementSprite4.classList.add("dissolve");
-    mainElementGif4.classList.remove("hidden");
-    mainElementContainer4.addEventListener("animationend", goneMe4);
-    mainElementContainer4.querySelector("audio").play();
-
-    randomAudio2();
-    incrementPoints();
-}
-
-function goneMe4() {
-    console.log("restartME4")
-    mainElementContainer4.removeEventListener("animationend", goneMe4)
-    mainElementSprite4.classList.remove("dissolve");
-    mainElementContainer4.classList.remove("paused");
-    mainElementContainer4.classList.remove("move_center4");
-    mainElementContainer4.classList.remove("move_center4_adjust");
-    mainElementContainer4.offsetWidth;
-    mainElementGif4.classList.add("hidden");
-    mainElementContainer4.addEventListener("click", clickMe4);
-
-    if (Math.random() < 0.5) {
-        mainElementContainer4.classList.add("move_center4")
-    } else {
-        mainElementContainer4.classList.add("move_center4_adjust")
     }  
 }
 
