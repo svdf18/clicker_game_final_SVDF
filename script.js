@@ -223,6 +223,8 @@ function startGame(){
 
 //main elements
 
+// PETL: Jeg har ændret her i Me funktionerne - du kan bruge samme mønster til Be
+
 function clickMe1() {
     console.log("click me1");
     const container = this;
