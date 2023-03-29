@@ -207,10 +207,10 @@ function startGame(){
     document.querySelector("#main_char_gif").classList.add("pulse");
     document.querySelector("#main_char_gif").classList.add("rotate360");
     
-    mainElementContainer1.addEventListener("click", clickMe1);
-    mainElementContainer2.addEventListener("click", clickMe2);
-    mainElementContainer3.addEventListener("click", clickMe3);
-    mainElementContainer4.addEventListener("click", clickMe4);
+    mainElementContainer1.addEventListener("mousedown", clickMe1);
+    mainElementContainer2.addEventListener("mousedown", clickMe1);
+    mainElementContainer3.addEventListener("mousedown", clickMe1);
+    mainElementContainer4.addEventListener("mousedown", clickMe1);
 
     badElementContainer1.addEventListener("click", clickBe1);
     badElementContainer2.addEventListener("click", clickBe2);
@@ -223,151 +223,52 @@ function startGame(){
 
 //main elements
 
+// PETL: Jeg har ændret her i Me funktionerne - du kan bruge samme mønster til Be
+
 function clickMe1() {
     console.log("click me1");
-    mainElementContainer1.removeEventListener("click", goneMe1);
-    mainElementContainer1.classList.add("paused");
-    mainElementSprite1.classList.add("dissolve");
-    mainElementGif1.classList.remove("hidden");
-    mainElementContainer1.addEventListener("animationend", goneMe1);
+    const container = this;
+    const sprite = this.querySelector(".sprite");
+    const gif = this.querySelector(".gif");
 
-    document.querySelector("#hit1_audio").play();
+    container.removeEventListener("mousedown", clickMe1);
+    container.classList.add("paused");
 
-    randomAudio1();
+    sprite.classList.add("dissolve");
+    gif.classList.remove("hidden");
+    container.addEventListener("animationend", goneMe1);
+
+    container.querySelector("audio").play();
+
+    if(container.dataset.randomAudio=="1") {
+        randomAudio1();
+    } else if(container.dataset.randomAudio=="2") {
+        randomAudio2();
+    }
+
     incrementPoints();
 }
 
 function goneMe1() {
     console.log("restartME1")
-    mainElementContainer1.removeEventListener("animationend", goneMe1)
-    mainElementSprite1.classList.remove("dissolve");
-    mainElementContainer1.classList.remove("paused");
-    mainElementContainer1.classList.remove("move_center1");
-    mainElementContainer1.classList.remove("move_center1_adjust");
-    mainElementContainer1.offsetWidth;
-    mainElementGif1.classList.add("hidden");
-    mainElementContainer1.addEventListener("click", clickMe1);
+    const container = this;
+    const sprite = this.querySelector(".sprite");
+    const gif = this.querySelector(".gif");
+
+    container.removeEventListener("animationend", goneMe1)
+    sprite.classList.remove("dissolve");
+    container.classList.remove("paused");
+    container.classList.remove(container.dataset.move1);
+    container.classList.remove(container.dataset.move2);
+    container.offsetWidth;
+    gif.classList.add("hidden");
+    container.addEventListener("mousedown", clickMe1);
     
-    function move_adjust_1(){
-    
-        if (Math.random() < 0.5) {
-            mainElementContainer1.classList.add("move_center1")
-        } else {
-            mainElementContainer1.classList.add("move_center1_adjust")
-        }
-    }
-
-    move_adjust_1();
-}
-
-function clickMe2() {
-    console.log("click me2");
-    mainElementContainer2.removeEventListener("click", goneMe2);
-    mainElementContainer2.classList.add("paused");
-    mainElementSprite2.classList.add("dissolve");
-    mainElementGif2.classList.remove("hidden");
-    mainElementContainer2.addEventListener("animationend", goneMe2);
-
-    document.querySelector("#hit2_audio").play();
-
-    randomAudio1();
-    incrementPoints();
-}
-
-function goneMe2() {
-    console.log("restartME2")
-    mainElementContainer2.removeEventListener("animationend", goneMe2)
-    mainElementSprite2.classList.remove("dissolve");
-    mainElementContainer2.classList.remove("paused");
-    mainElementContainer2.classList.remove("move_center2");
-    mainElementContainer2.classList.remove("move_center2_adjust");
-    mainElementContainer2.offsetWidth;
-    mainElementGif2.classList.add("hidden");
-    mainElementContainer2.addEventListener("click", clickMe2);
-
-    function move_adjust_2(){
-    
-        if (Math.random() < 0.5) {
-            mainElementContainer2.classList.add("move_center2")
-        } else {
-            mainElementContainer2.classList.add("move_center2_adjust")
-        }
-    }
-
-    move_adjust_2();
-}
-
-function clickMe3() {
-    console.log("click me3");
-    mainElementContainer3.removeEventListener("click", goneMe3);
-    mainElementContainer3.classList.add("paused");
-    mainElementSprite3.classList.add("dissolve");
-    mainElementGif3.classList.remove("hidden");
-    mainElementContainer3.addEventListener("animationend", goneMe3);
-
-    document.querySelector("#hit3_audio").play();
-
-    randomAudio2();
-    incrementPoints();
-}
-
-function goneMe3() {
-    console.log("restartME3")
-    mainElementContainer3.removeEventListener("animationend", goneMe3)
-    mainElementSprite3.classList.remove("dissolve");
-    mainElementContainer3.classList.remove("paused");
-    mainElementContainer3.classList.remove("move_center3");
-    mainElementContainer3.classList.remove("move_center3_adjust");
-    mainElementContainer3.offsetWidth;
-    mainElementGif3.classList.add("hidden");
-    mainElementContainer3.addEventListener("click", clickMe3);
-
-    function move_adjust_3(){
-    
-        if (Math.random() < 0.5) {
-            mainElementContainer3.classList.add("move_center3")
-        } else {
-            mainElementContainer3.classList.add("move_center3_adjust")
-        }
-    }
-
-    move_adjust_3();
-}
-
-function clickMe4() {
-    console.log("click me4");
-    mainElementContainer4.removeEventListener("click", goneMe4);
-    mainElementContainer4.classList.add("paused");
-    mainElementSprite4.classList.add("dissolve");
-    mainElementGif4.classList.remove("hidden");
-    mainElementContainer4.addEventListener("animationend", goneMe4);
-    document.querySelector("#hit4_audio").play();
-
-    randomAudio2();
-    incrementPoints();
-}
-
-function goneMe4() {
-    console.log("restartME4")
-    mainElementContainer4.removeEventListener("animationend", goneMe4)
-    mainElementSprite4.classList.remove("dissolve");
-    mainElementContainer4.classList.remove("paused");
-    mainElementContainer4.classList.remove("move_center4");
-    mainElementContainer4.classList.remove("move_center4_adjust");
-    mainElementContainer4.offsetWidth;
-    mainElementGif4.classList.add("hidden");
-    mainElementContainer4.addEventListener("click", clickMe4);
-
-    function move_adjust_4(){
-    
-        if (Math.random() < 0.5) {
-            mainElementContainer4.classList.add("move_center4")
-        } else {
-            mainElementContainer4.classList.add("move_center4_adjust")
-        }
-    }
-
-    move_adjust_4();
+    if (Math.random() < 0.5) {
+        container.classList.add(container.dataset.move1);
+    } else {
+        container.classList.add(container.dataset.move2)
+    }  
 }
 
 // bad elements
